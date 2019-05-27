@@ -56,7 +56,7 @@ public class HomeController {
 			pelicula1.setDuracion(120);
 			pelicula1.setClasificacion("B");
 			pelicula1.setGenero("Aventura");
-			pelicula1.setFechaEstreno(formatter.parse("02-05-2017"));
+			pelicula1.setFechaEstreno(formatter.parse("02-05-2019"));
 			// imagen="cinema.png"
 			// estatus="Activa"
 
@@ -66,7 +66,7 @@ public class HomeController {
 			pelicula2.setDuracion(132);
 			pelicula2.setClasificacion("A");
 			pelicula2.setGenero("Infantil");
-			pelicula2.setFechaEstreno(formatter.parse("20-05-2017"));
+			pelicula2.setFechaEstreno(formatter.parse("20-05-2019"));
 			pelicula2.setImagen("bella.png"); // Nombre del archivo de imagen
 
 			Pelicula pelicula3 = new Pelicula();
@@ -75,7 +75,7 @@ public class HomeController {
 			pelicula3.setDuracion(106);
 			pelicula3.setClasificacion("B");
 			pelicula3.setGenero("Thriller");
-			pelicula3.setFechaEstreno(formatter.parse("28-05-2017"));
+			pelicula3.setFechaEstreno(formatter.parse("28-05-2019"));
 			pelicula3.setImagen("contratiempo.png"); // Nombre del archivo de imagen
 
 			Pelicula pelicula4 = new Pelicula();
@@ -84,7 +84,7 @@ public class HomeController {
 			pelicula4.setDuracion(118);
 			pelicula4.setClasificacion("B");
 			pelicula4.setGenero("Accion y Aventura");
-			pelicula4.setFechaEstreno(formatter.parse("06-06-2017"));
+			pelicula4.setFechaEstreno(formatter.parse("06-04-2019"));
 			pelicula4.setImagen("kong.png"); // Nombre del archivo de imagen
 			pelicula4.setEstatus("Inactiva"); // Esta pelicula estara inactiva
 			

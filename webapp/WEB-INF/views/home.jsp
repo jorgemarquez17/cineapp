@@ -19,7 +19,7 @@
 
 	<ol>
 		<c:forEach items="${ peliculas }" var="pelicula">
-			<li>${pelicula}</li>
+			<li>${pelicula}</li>|
 		</c:forEach>
 	</ol>
  	--%>
