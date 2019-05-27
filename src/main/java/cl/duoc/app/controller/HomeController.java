@@ -1,4 +1,4 @@
-package net.itinajero.app.controller;
+package cl.duoc.app.controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,7 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import net.itinajero.app.model.Pelicula;
+
+import cl.duoc.app.model.Pelicula;
 
 @Controller
 public class HomeController {

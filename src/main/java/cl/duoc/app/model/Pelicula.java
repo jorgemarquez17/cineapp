@@ -1,4 +1,4 @@
-package net.itinajero.app.model;
+package cl.duoc.app.model;
 
 import java.util.Date;
 
