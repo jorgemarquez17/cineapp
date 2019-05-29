@@ -129,7 +129,7 @@ public class HomeController {
 			pelicula5.setDuracion(104);
 			pelicula5.setClasificacion("B");
 			pelicula5.setGenero("Drama");
-			pelicula5.setFechaEstreno(formatter.parse("10-05-2019"));
+			pelicula5.setFechaEstreno(formatter.parse("30-05-2019"));
 			pelicula5.setImagen("estreno5.png");// nombre del archivo de imagen
 			pelicula5.setEstatus("Activa");// Esta pelicula estara inactiva
 			
