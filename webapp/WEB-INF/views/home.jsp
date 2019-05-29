@@ -66,7 +66,7 @@
                 <c:forEach items="${fechas}" var="fecha">
                 	<%--<option value="${fecha}">${fecha}</option>--%>
                 	<c:choose>
-                		<c:when test="${fechaBusqueda eq fecha }">
+                		<c:when test="${fechaBusqueda eq fecha}">
                 			<option value="${fecha}" selected>${fecha}</option>
                 		</c:when>
                 		<c:otherwise>
@@ -92,14 +92,14 @@
             <img class="img-rounded" src="${urlPublic}/images/${pelicula.imagen}" alt="Generic placeholder image" width="150" height="200">
             <h4>${pelicula.titulo}</h4>
             <h4>
-              <span class="label label-default">${pelicula.clasificacion}</span>
-              <span class="label label-default">${pelicula.duracion}</span>
-              <span class="label label-default">${pelicula.genero}</span>
+              <span class="label label-default">${pelicula.clasificacion }</span>
+              <span class="label label-default">${pelicula.duracion }</span>
+              <span class="label label-default">${pelicula.genero }</span>
             </h4>  
-            <%--      
-            <p><a class="btn btn-sm btn-primary" href="detail/${pelicula.id }/${fechaBusqueda}" role="button">Consulta Horarios &raquo;</a></p>
-            --%>   
-             <p><a class="btn btn-sm btn-primary" href="detail?idMovie=${pelicula.id }&fecha=${fechaBusqueda}" role="button">Consulta Horarios &raquo;</a></p>
+                  
+            <p><a class="btn btn-sm btn-primary" href="${urlRoot}detail/${pelicula.id }/${fechaBusqueda}" role="button">Consulta Horarios &raquo;</a></p>
+            
+             <%--<p><a class="btn btn-sm btn-primary" href="detail?idMovie=${pelicula.id }&fecha=${fechaBusqueda}" role="button">Consulta Horarios &raquo;</a></p>--%>
           </div>
           </c:forEach>         
 

@@ -17,12 +17,13 @@
   <body>
 
 	<jsp:include page="../includes/menu.jsp" ></jsp:include>
+	
     <div class="container theme-showcase" role="main">
 
       <h3 class="blog-title"><span class="label label-success">Datos de la Noticia</span></h3>
 	  
 	  <spring:url value="/noticias/save" var="urlForm"></spring:url>
-      <form action="${urlForm}" method="post">
+      <form action="${urlForm}" method="POST">
         <div class="row">         
           <div class="col-sm-6">
             <div class="form-group">
@@ -65,6 +66,8 @@
     <script src="${urlPublic}/bootstrap/js/bootstrap.min.js"></script> 
     <script src="${urlPublic}/tinymce/tinymce.min.js"></script>
     <script>
+      //Configuracion de la barra de heramientas
+      //https://www.tinymce.com/docs/get-started/basic-setup/
       tinymce.init({
           selector: '#detalle',
           plugins: "textcolor, table lists code",

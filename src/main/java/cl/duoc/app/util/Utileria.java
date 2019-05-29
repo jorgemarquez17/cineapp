@@ -28,8 +28,7 @@ public class Utileria {
 			Date d = gcal.getTime();
 			gcal.add(Calendar.DATE, 1);
 			nextDays.add(sdf.format(d));
-		}
-		
+		}		
 		
 		return nextDays;
 	}
