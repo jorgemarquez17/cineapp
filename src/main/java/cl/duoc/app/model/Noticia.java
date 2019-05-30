@@ -11,6 +11,7 @@ public class Noticia {
 	private String estatus;
 	
 	public Noticia() {
+		System.out.println("consuntructor  Noticia");
 		this.fecha = new Date();
 		this.estatus= "Activa";
 		
@@ -27,6 +28,7 @@ public class Noticia {
 	}
 
 	public void setId(int id) {
+		System.out.println("Set Titutlo ");
 		this.id = id;
 	}
 
@@ -51,6 +53,7 @@ public class Noticia {
 	}
 
 	public void setDetalle(String detalle) {
+		System.out.println("Set Detalle");
 		this.detalle = detalle;
 	}
 
@@ -59,6 +62,7 @@ public class Noticia {
 	}
 
 	public void setEstatus(String estatus) {
+		System.out.println("Set Status");
 		this.estatus = estatus;
 	}
 

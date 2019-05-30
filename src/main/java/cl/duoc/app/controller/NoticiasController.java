@@ -22,7 +22,7 @@ public class NoticiasController {
 		return "noticias/formNoticia";
 	}
 	
-	@PostMapping(value="/save")
+	/*@PostMapping(value="/save")
 	public String guardar(@RequestParam("titulo") String titulo, @RequestParam("estatus") String estatus,
 			@RequestParam("detalle") String detalle) {
 		
@@ -35,6 +35,16 @@ public class NoticiasController {
 		serviceNoticias.guardar(noticia);
 		
 		System.out.println(noticia);
+		return "noticias/formNoticia";
+	}*/
+	
+	@PostMapping(value="/save")
+	public String guardar(Noticia noticia) {
+		
+		//Pendiente guardar el objeto noticia en la base de datos 
+		
+		serviceNoticias.guardar(noticia);
+		
 		return "noticias/formNoticia";
 	}
 
