@@ -24,7 +24,7 @@ public class HomeController {
 	@Autowired
 	private IPeliculaService servicePeliculas;
 	
-	private SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+	private SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yy");
 
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String goHome() {

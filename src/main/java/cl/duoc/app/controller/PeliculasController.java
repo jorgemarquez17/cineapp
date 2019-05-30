@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.SimpleFormatter;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -15,10 +16,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cl.duoc.app.model.Pelicula;
+import cl.duoc.app.service.IPeliculaService;
 
 @Controller
 @RequestMapping("/peliculas")
 public class PeliculasController {
+	
+	@Autowired
+	private IPeliculaService servicePelicula;
 	
 	@GetMapping("/create")
 	public String crear() {
@@ -28,15 +33,19 @@ public class PeliculasController {
 	@PostMapping("/save")
 	public String guardar(Pelicula pelicula, BindingResult result) {
 		
-		/*if(result.hasErrors()) {
+		if(result.hasErrors()) {
 			System.out.println("Existieron Errores");
 			return "peliculas/formPelicula";
-		}*/
-		for(ObjectError error : result.getAllErrors()) {
-			System.out.println("Descripcion del Error : "+error.getDefaultMessage());
 		}
+		/*for(ObjectError error : result.getAllErrors()) {
+			System.out.println("Descripcion del Error : "+error.getDefaultMessage());
+		}*/
 		
 		System.out.println("Recibiendo objeto pelicula : " + pelicula);
+		
+		System.out.println("Elementos de la lista Antes de la insercion: " + servicePelicula.buscarTodas().size());
+		servicePelicula.insertar(pelicula);	
+		System.out.println("Elementos de la lista Despues de la insercion: " + servicePelicula.buscarTodas().size());
 		return "peliculas/formPelicula";
 	}
 	
