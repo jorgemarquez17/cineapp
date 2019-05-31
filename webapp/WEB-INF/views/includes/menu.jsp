@@ -11,7 +11,8 @@
           <a class="navbar-brand" href="#">My CineSite</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">            
+          <ul class="nav navbar-nav">
+            <li><a href="#">Peliculas</a></li>             
             <li><a href="#">Acerca</a></li>
             <li><a href="#">Login</a></li>            
           </ul>
