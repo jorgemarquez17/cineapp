@@ -55,7 +55,8 @@ public class PeliculasController {
 		System.out.println("Elementos de la lista Antes de la insercion: " + servicePelicula.buscarTodas().size());
 		servicePelicula.insertar(pelicula);	
 		System.out.println("Elementos de la lista Despues de la insercion: " + servicePelicula.buscarTodas().size());
-		return "peliculas/formPelicula"; 
+		//return "peliculas/formPelicula";
+		return "redirect:/peliculas/index";
 	}
 	
 	@InitBinder
