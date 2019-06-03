@@ -38,7 +38,7 @@
 		  	</ul>
 		  </div>
 	  </spring:hasBindErrors>
-      <form action="${urlForm}" method="post">
+      <form action="${urlForm}" method="post" enctype="multipart/form-data">
         <div class="row">
           <div class="col-sm-3">
             <div class="form-group">

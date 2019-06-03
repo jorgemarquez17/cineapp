@@ -12,6 +12,9 @@
 			<param-value>/WEB-INF/spring/dispatcher-servlet.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
+		<multipart-config>
+			<location>/tmp</location>
+		</multipart-config>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>springmvc</servlet-name>

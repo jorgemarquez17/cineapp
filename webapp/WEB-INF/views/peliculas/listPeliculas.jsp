@@ -26,6 +26,11 @@
 
       <h3>Listado de Peliculas</h3>
       
+      <c:if test="${mensaje!=null}">
+      	<div class='alert alert-success' role="alert">${mensaje}</div>
+      </c:if>
+      
+      
       <a href="${urlNueva}" class="btn btn-success" role="button" title="Nueva Pelicula" >Nueva</a><br><br>
 	
       <div class="table-responsive">
