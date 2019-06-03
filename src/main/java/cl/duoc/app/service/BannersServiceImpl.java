@@ -19,23 +19,24 @@ public class BannersServiceImpl implements IBannersService {
 		// Ejercicio: Crear algunos objetos de tipo Banner (estaticos)
 		Banner banner1 = new Banner();
 		banner1.setId(1);
-		banner1.setTitulo("titulo1");
-		banner1.setArchivo("");
+		banner1.setTitulo("Proximamente Kong La Isla Calavera");
+		banner1.setArchivo("slide1.jpg");
 		
 		Banner banner2 = new Banner();
-		banner2.setId(1);
-		banner2.setTitulo("titulo2");
-		banner2.setArchivo("");
+		banner2.setId(2);
+		banner2.setTitulo("Estreno La bella y la bestia");
+		banner2.setArchivo("slide2.jpg");
 		
 		Banner banner3 = new Banner();
-		banner3.setId(1);
-		banner3.setTitulo("titulo3");
-		banner3.setArchivo("");
+		banner3.setId(3);
+		banner3.setTitulo("Este mes no te pierdas Rapidos y Furiosos 8");
+		banner3.setArchivo("slide3.jpg");
 		
 		Banner banner4 = new Banner();
-		banner4.setId(1);
-		banner4.setTitulo("titulo4");
-		banner4.setArchivo("");
+		banner4.setId(4);
+		banner4.setTitulo("Estreno en Agosto - Jefe en Pañales");
+		banner4.setArchivo("slide4.jpg");
+		banner4.setEstatus("Inactivo");
 			
 		// Ejercicio: Agregar los objetos Banner a la lista
 		
@@ -53,7 +54,7 @@ public class BannersServiceImpl implements IBannersService {
 	public void insertar(Banner banner) {
 		
 		// Ejercicio: Implementar metodo
-		
+		lista.add(banner);
 	}
 
 	/**
@@ -63,7 +64,7 @@ public class BannersServiceImpl implements IBannersService {
 	public List<Banner> buscarTodos() {
 		
 		// Ejercicio: Implementar metodo
-		return null;
+		return lista;
 		
 	}
 
