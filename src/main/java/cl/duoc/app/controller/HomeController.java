@@ -40,18 +40,13 @@ public class HomeController {
 	public String buscar(Model model,@RequestParam("fecha") String fecha) {
 		
 		List<String> listaFechas = Utileria.getNextDays(4);
-
 		List<Pelicula> peliculas =servicePeliculas.buscarTodas();
-		
-		List<Banner> listBanners = serviceBanners.buscarTodos();
 		
 		model.addAttribute("fechas",listaFechas);
 		model.addAttribute("fechaBusqueda",fecha);
-		model.addAttribute("peliculas", peliculas);
-		
-		model.addAttribute("listBanners",listBanners);
+		model.addAttribute("peliculas", peliculas);		
+		model.addAttribute("banners",serviceBanners.buscarTodos());// Ejercicio Solucion 
 
-		System.out.println("Buscado todas las peliculas en exhibicion para la fecha: "+ fecha);
 		return "home";
 	}
 
