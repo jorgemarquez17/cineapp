@@ -26,6 +26,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import cl.duoc.app.model.Pelicula;
 import cl.duoc.app.service.IPeliculaService;
+import cl.duoc.app.util.Utileria;
 
 @Controller
 @RequestMapping("/peliculas")
@@ -54,8 +55,8 @@ public class PeliculasController {
 			System.out.println("Existieron Errores");
 			return "peliculas/formPelicula";
 		}
-		if(!multiPart.isEmpty()) {
-			String nombreImagen = guardarImagen(multiPart,request);
+		if(!multiPart.isEmpty()) { //Esto el objeto multipart no esta vacio siginfica que el usuario selecciono una imagen
+			String nombreImagen = Utileria.guardarImagen(multiPart, request);
 			pelicula.setImagen(nombreImagen);
 		}
 		/*for(ObjectError error : result.getAllErrors()) {
@@ -73,23 +74,7 @@ public class PeliculasController {
 		return "redirect:/peliculas/index";
 	}
 	
-	private String guardarImagen(MultipartFile multiPart, HttpServletRequest request) {
-		// Obtenemos el nombre original del archivo
-		String nombreOriginal = multiPart.getOriginalFilename();
-		// Obtenemos la ruta ABSOLUTA del directorio images
-		// apache-tomcat/webapps/cineapp/resources/images/
-		String rutaFinal = request.getServletContext().getRealPath("/resources/images/");
-		try {
-			// Formamos el nombre del archivo para guardarlo en el disco duro
-			File imageFile = new File(rutaFinal + nombreOriginal);
-			// Aqui se guarda fisicamente el archivo en el disco duro
-			multiPart.transferTo(imageFile);
-			return nombreOriginal;
-		} catch (IOException e) {
-			System.out.println("Error " + e.getMessage());
-			return null;
-		}
-	}
+	
 
 	@InitBinder
 	public void initbinder(WebDataBinder binder) {
