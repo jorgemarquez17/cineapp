@@ -1,9 +1,7 @@
 package cl.duoc.app.controller;
 
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import cl.duoc.app.model.Banner;
 import cl.duoc.app.service.IBannersService;
 import cl.duoc.app.util.Utileria;
@@ -22,8 +19,6 @@ import cl.duoc.app.util.Utileria;
 @Controller
 @RequestMapping("/banners/")
 public class BannersController {
-
-	// Ejercicio: Inyectar instancia de la clase de servicio
         @Autowired	
 		private IBannersService serviceBanners;
 	/**
@@ -48,10 +43,7 @@ public class BannersController {
 	 */
 	@GetMapping("/create")
 	public String crear() {
-		
-		// Ejercicio: Crear vista formBanner.jsp. Utilizar el archivo formBanner.html de la plantilla 
-		return "banners/formBanner";
-		
+		return "banners/formBanner";		
 	}
 	
 	/**
@@ -62,18 +54,14 @@ public class BannersController {
 	public String guardar(Banner banner, BindingResult result, RedirectAttributes attributes, 
 			@RequestParam("archivoImagen") MultipartFile multiPart, HttpServletRequest request) {
 		
-		// Ejercicio: Implementar el metodo.
-		
 		if(result.hasErrors()) {
 			System.out.println("Existen Errores");
-			return "banners/formBanners";
-		}
-		
+			return "banners/formBanner";
+		}		
 		if(!multiPart.isEmpty()) {
 			String nombreImagen = Utileria.guardarImagen(multiPart, request);
 			banner.setArchivo(nombreImagen);
-		}
-		
+		}		
 		serviceBanners.insertar(banner);
 		attributes.addFlashAttribute("mensaje", "El registro fue guardado" );
 		

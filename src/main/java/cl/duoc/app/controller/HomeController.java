@@ -3,9 +3,7 @@ package cl.duoc.app.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,8 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import cl.duoc.app.model.Banner;
 import cl.duoc.app.model.Pelicula;
 import cl.duoc.app.service.IBannersService;
 import cl.duoc.app.service.IPeliculaService;
@@ -56,12 +52,12 @@ public class HomeController {
 		List<String> listaFechas = Utileria.getNextDays(4);
 
 		List<Pelicula> peliculas = servicePeliculas.buscarTodas();
-		List<Banner> listBanners = serviceBanners.buscarTodos();
+		
 
 		model.addAttribute("fechas",listaFechas);
 		model.addAttribute("fechaBusqueda",dateFormat.format(new Date()));
 		model.addAttribute("peliculas", peliculas);
-		model.addAttribute("listBanners",listBanners);
+		model.addAttribute("listBanners",serviceBanners.buscarTodos());
 
 		return "home";
 	}

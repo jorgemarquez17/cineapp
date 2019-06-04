@@ -1,10 +1,12 @@
 package cl.duoc.app.service;
 
-import java.util.Date;
+
 import java.util.LinkedList;
 import java.util.List;
+import org.springframework.stereotype.Service;
 import cl.duoc.app.model.Banner;
 
+@Service
 public class BannersServiceImpl implements IBannersService {
 
 	private List<Banner> lista = null; 
@@ -14,7 +16,7 @@ public class BannersServiceImpl implements IBannersService {
 	public BannersServiceImpl() {
 		
 		// Ejercicio: Crear una nueva lista enlazada
-		lista = new LinkedList<Banner>();	
+		lista = new LinkedList<>();	
 		
 		// Ejercicio: Crear algunos objetos de tipo Banner (estaticos)
 		Banner banner1 = new Banner();
