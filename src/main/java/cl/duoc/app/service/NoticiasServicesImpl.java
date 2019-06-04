@@ -8,7 +8,7 @@ import cl.duoc.app.model.Noticia;
 public class NoticiasServicesImpl implements INoticiasService {
 	
 	public  NoticiasServicesImpl() {
-		System.out.println("Creando una instancia de la clase NoticiasServicesImpl");
+		//System.out.println("Creando una instancia de la clase NoticiasServicesImpl");
 	}
 
 	@Override

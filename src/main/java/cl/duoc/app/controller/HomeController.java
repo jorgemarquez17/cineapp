@@ -66,8 +66,8 @@ public class HomeController {
 	public String mostrarDetalle(Model model,@PathVariable("id") int idPelicula, @PathVariable("fecha") String fecha) {
 	//public String mostrarDetalle(Model model,@RequestParam("idMovie") int idPelicula, @RequestParam("fecha") String fecha) {
 		
-		System.out.println("Buscando Horarios para la pelicula:  "+ idPelicula);
-		System.out.println("Para la fecha : "+ fecha);
+		//System.out.println("Buscando Horarios para la pelicula:  "+ idPelicula);
+		//System.out.println("Para la fecha : "+ fecha);
 		
 		model.addAttribute("pelicula",servicePeliculas.buscarPorId(idPelicula));
 		

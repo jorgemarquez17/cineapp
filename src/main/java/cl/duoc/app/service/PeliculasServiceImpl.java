@@ -15,7 +15,7 @@ public class PeliculasServiceImpl implements IPeliculaService {
 	private List<Pelicula> lista = null;
 
 	public  PeliculasServiceImpl() {
-		System.out.println("Creando una instancia de la clase PeliculasServiceImpl");
+		//System.out.println("Creando una instancia de la clase PeliculasServiceImpl");
 		
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 		

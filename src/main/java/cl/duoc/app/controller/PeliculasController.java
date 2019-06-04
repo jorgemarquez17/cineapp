@@ -57,11 +57,8 @@ public class PeliculasController {
 			System.out.println("Descripcion del Error : "+error.getDefaultMessage());
 		}*/
 		
-		System.out.println("Recibiendo objeto pelicula : " + pelicula);
-		
-		System.out.println("Elementos de la lista Antes de la insercion: " + servicePelicula.buscarTodas().size());
+		System.out.println("Recibiendo objeto pelicula : " + pelicula);		
 		servicePelicula.insertar(pelicula);	
-		System.out.println("Elementos de la lista Despues de la insercion: " + servicePelicula.buscarTodas().size());
 		
 		attributes.addFlashAttribute("mensaje", "El Registro fue guardado");
 		//return "peliculas/formPelicula";
