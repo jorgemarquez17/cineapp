@@ -27,7 +27,7 @@
         <!-- Indicators -->
         <ol class="carousel-indicators">
 
-				<c:forEach items="${banners}" var="banner" varStatus="loop">
+				<c:forEach items="${listBanners}" var="banner" varStatus="loop">
 					<c:choose>
 						<c:when test="${loop.index==0}">
 							<li data-target="#myCarousel" data-slide-to="${loop.index}"
@@ -46,7 +46,7 @@
         </ol>
         <!-- Image Size 1140 x 250 -->
         <div class="carousel-inner" role="listbox">
-				<c:forEach items="${banners}" var="banner" varStatus="loop">
+				<c:forEach items="${listBanners}" var="banner" varStatus="loop">
 					<c:choose>
 						<c:when test="${loop.index==0}">
 							<div class="item active">

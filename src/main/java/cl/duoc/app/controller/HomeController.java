@@ -41,7 +41,7 @@ public class HomeController {
 		model.addAttribute("fechas",listaFechas);
 		model.addAttribute("fechaBusqueda",fecha);
 		model.addAttribute("peliculas", peliculas);		
-		model.addAttribute("banners",serviceBanners.buscarTodos());// Ejercicio Solucion 
+		model.addAttribute("listBanners",serviceBanners.buscarTodos());// Ejercicio Solucion 
 
 		return "home";
 	}
@@ -50,7 +50,6 @@ public class HomeController {
 	public String mostrarPrincipal(Model model) {
 		
 		List<String> listaFechas = Utileria.getNextDays(4);
-
 		List<Pelicula> peliculas = servicePeliculas.buscarTodas();
 		
 

@@ -1,5 +1,5 @@
-  <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<<spring:url value="/" var="urlRoot"></spring:url>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<spring:url value="/" var="urlRoot"></spring:url>
   <!-- Fixed navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
