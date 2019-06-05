@@ -64,9 +64,7 @@ public class PeliculasController {
 		attributes.addFlashAttribute("mensaje", "El Registro fue guardado");
 		//return "peliculas/formPelicula";
 		return "redirect:/peliculas/index";
-	}
-	
-	
+	}	
 
 	@InitBinder
 	public void initbinder(WebDataBinder binder) {
