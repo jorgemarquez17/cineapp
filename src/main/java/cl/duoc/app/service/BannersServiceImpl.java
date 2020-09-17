@@ -36,7 +36,7 @@ public class BannersServiceImpl implements IBannersService {
 		
 		Banner banner4 = new Banner();
 		banner4.setId(4);
-		banner4.setTitulo("Estreno en Agosto - Jefe en PaÃ±ales");
+		banner4.setTitulo("Estreno en Agosto - Jefe en Pañales");
 		banner4.setArchivo("slide4.jpg");
 		banner4.setEstatus("Inactivo");
 			
@@ -45,8 +45,7 @@ public class BannersServiceImpl implements IBannersService {
 		lista.add(banner1);
 		lista.add(banner2);
 		lista.add(banner3);
-		lista.add(banner4);
-		
+		lista.add(banner4);		
 	}
 
 	/**
