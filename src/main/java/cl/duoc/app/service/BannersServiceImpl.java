@@ -16,7 +16,7 @@ public class BannersServiceImpl implements IBannersService {
 	public BannersServiceImpl() {
 		
 		// Ejercicio: Crear una nueva lista enlazada
-		lista = new LinkedList<>();	
+		lista = new LinkedList<Banner>();	
 		
 		// Ejercicio: Crear algunos objetos de tipo Banner (estaticos)
 		Banner banner1 = new Banner();
@@ -51,7 +51,6 @@ public class BannersServiceImpl implements IBannersService {
 	/**
 	 * Insertamos un objeto de tipo Banner a la lista
 	 */
-	@Override
 	public void insertar(Banner banner) {
 		
 		// Ejercicio: Implementar metodo
@@ -61,7 +60,6 @@ public class BannersServiceImpl implements IBannersService {
 	/**
 	 * Regresamos la lista de objetos Banner
 	 */
-	@Override
 	public List<Banner> buscarTodos() {
 		
 		// Ejercicio: Implementar metodo

@@ -20,7 +20,7 @@ public class PeliculasServiceImpl implements IPeliculaService {
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 		
 		try {
-			lista = new LinkedList<>();
+			lista = new LinkedList<Pelicula>();
 
 			Pelicula pelicula1 = new Pelicula();
 			pelicula1.setId(1);
@@ -83,13 +83,11 @@ public class PeliculasServiceImpl implements IPeliculaService {
 		
 	}
 	
-	@Override
 	public List<Pelicula> buscarTodas() {		
 		
 		return lista;
 	}
 
-	@Override
 	public Pelicula buscarPorId(int idPelicula) {
 		
 		for(Pelicula p : lista) {
@@ -101,17 +99,15 @@ public class PeliculasServiceImpl implements IPeliculaService {
 		return null;
 	}
 
-	@Override
 	public void insertar(Pelicula pelicula) {
 		
 		lista.add(pelicula);
 		
 	}
 
-	@Override
 	public List<String> buscarGenero() {
 		// TODO Auto-generated method stub
-		List<String> generos = new LinkedList<>();
+		List<String> generos = new LinkedList<String>();
 		generos.add("Accion");
 		generos.add("Aventura");
 		generos.add("Clasicas");

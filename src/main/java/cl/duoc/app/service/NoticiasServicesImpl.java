@@ -11,7 +11,6 @@ public class NoticiasServicesImpl implements INoticiasService {
 		//System.out.println("Creando una instancia de la clase NoticiasServicesImpl");
 	}
 
-	@Override
 	public void guardar(Noticia noticia) {
 		// TODO Auto-generated method stub
 		
