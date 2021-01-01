@@ -19,12 +19,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import cl.duoc.app.model.Pelicula;
+import cl.duoc.app.service.IDetallesService;
 import cl.duoc.app.service.IPeliculaService;
 import cl.duoc.app.util.Utileria;
 
 @Controller
 @RequestMapping("/peliculas")
 public class PeliculasController {
+	
+	@Autowired
+	private IDetallesService serviceDetalle;
 	
 	@Autowired
 	private IPeliculaService servicePelicula;
@@ -53,12 +57,11 @@ public class PeliculasController {
 		if(!multiPart.isEmpty()) { //Esto el objeto multipart no esta vacio siginfica que el usuario selecciono una imagen
 			String nombreImagen = Utileria.guardarImagen(multiPart, request);
 			pelicula.setImagen(nombreImagen);
-		}
-		/*for(ObjectError error : result.getAllErrors()) {
-			System.out.println("Descripcion del Error : "+error.getDefaultMessage());
-		}*/
+		}		
+		System.out.println("Antes: "+pelicula.getDetalle());
+		serviceDetalle.insertar(pelicula.getDetalle());
+		System.out.println("Despues: "+pelicula.getDetalle());
 		
-		System.out.println("Recibiendo objeto pelicula : " + pelicula);		
 		servicePelicula.insertar(pelicula);	
 		
 		attributes.addFlashAttribute("mensaje", "El Registro fue guardado");

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import cl.duoc.app.model.Pelicula;
 
-@Service
+//@Service
 public class PeliculasServiceImpl implements IPeliculaService {
 	
 	private List<Pelicula> lista = null;
