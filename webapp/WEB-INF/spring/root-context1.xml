@@ -9,7 +9,9 @@
 		http://www.springframework.org/schema/data/jpa 
 			http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
 			http://www.springframework.org/schema/tx 
-			http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+			http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+			http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
 
 	<context:component-scan base-package="cl.duoc.app.service"></context:component-scan>
 	
@@ -24,7 +26,8 @@
 	<bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 		<property name="generateDdl" value="false" />
 		<property name="showSql" value="true"></property>
-		<property name="databasePlatform" value="org.hibernate.dialect.MySQL5Dialect" />
+		<property name="databasePlatform"
+			value="org.hibernate.dialect.MySQL57Dialect" />
 	</bean>
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="packagesToScan" value="cl.duoc.app.model" />

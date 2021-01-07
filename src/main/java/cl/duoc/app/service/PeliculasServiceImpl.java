@@ -5,8 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
 import cl.duoc.app.model.Pelicula;
 
 //@Service
@@ -67,7 +65,8 @@ public class PeliculasServiceImpl implements IPeliculaService {
 			pelicula5.setClasificacion("B");
 			pelicula5.setGenero("Drama");
 			pelicula5.setFechaEstreno(formatter.parse("30-05-2019"));
-			pelicula5.setImagen("estreno5.png");// nombre del archivo de imagen
+			//pelicula5.setImagen("estreno5.png");// nombre del archivo de imagen
+			pelicula5.setImagen("life.png");// nombre del archivo de imagen
 			pelicula5.setEstatus("Activa");// Esta pelicula estara inactiva
 			
 			// Agregamos los objetos Pelicula a la lista

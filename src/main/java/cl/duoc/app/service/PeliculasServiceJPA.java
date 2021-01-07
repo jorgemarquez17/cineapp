@@ -2,7 +2,9 @@ package cl.duoc.app.service;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
+import org.aspectj.runtime.internal.PerObjectMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import cl.duoc.app.model.Pelicula;
@@ -23,13 +25,19 @@ public class PeliculasServiceJPA implements IPeliculaService{
 	@Override
 	public List<Pelicula> buscarTodas() {
 		// TODO Auto-generated method stub
-		return null;
+		return peliculasRepo.findAll();
 	}
 
 	@Override
 	public Pelicula buscarPorId(int idPelicula) {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<Pelicula> peli;
+		peli = peliculasRepo.findById(idPelicula);
+		if(peli.isPresent()) {
+			return peli.get();
+		}
+		else {
+			return null;
+		}
 	}
 
 	@Override
