@@ -116,7 +116,7 @@
         <div class="row">
         
         
-		<c:forEach items="${peliculas }" var="pelicula">
+		<c:forEach items="${peliculas}" var="pelicula">
           <div class="col-xs-12 col-sm-6 col-md-3">
             <img class="img-rounded" src="${urlPublic}/images/${pelicula.imagen}" alt="Generic placeholder image" width="150" height="200">
             <h4>${pelicula.titulo}</h4>
@@ -126,7 +126,7 @@
               <span class="label label-default">${pelicula.genero }</span>
             </h4>  
                   
-            <p><a class="btn btn-sm btn-primary" href="${urlRoot}detail/${pelicula.id }/${fechaBusqueda}" role="button">Consulta Horarios &raquo;</a></p>
+            <p><a class="btn btn-sm btn-primary" href="${urlRoot}detail/${pelicula.id}/${fechaBusqueda}" role="button">Consulta Horarios &raquo;</a></p>
             
              <%--<p><a class="btn btn-sm btn-primary" href="detail?idMovie=${pelicula.id }&fecha=${fechaBusqueda}" role="button">Consulta Horarios &raquo;</a></p>--%>
           </div>

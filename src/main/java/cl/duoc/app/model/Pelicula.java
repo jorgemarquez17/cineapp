@@ -39,7 +39,6 @@ public class Pelicula {
 	
 	
 	public Pelicula() {
-		System.out.println("Constructor Pelicula");
 	}
 	public int getId() {
 		return id;
@@ -105,10 +104,15 @@ public class Pelicula {
 	}
 	@Override
 	public String toString() {
-		return "Pelicula [id=" + id + ", titulo=" + titulo + ", duracion=" + duracion + ", clasificacion="
-				+ clasificacion + ", genero=" + genero + ", imagen=" + imagen + ", fechaEstreno=" + fechaEstreno
-				+ ", estatus=" + estatus + ", detalle=" + detalle + ", horarios=" + horarios + "]";
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("Pelicula [id=" + id + ", titulo=" + titulo + ", duracion=" + duracion + ", clasificacion=");
+		sb.append(clasificacion + ", genero=" + genero + ", imagen=" + imagen + ", fechaEstreno=" + fechaEstreno);
+		sb.append(", estatus=" + estatus + /*", detalle=" + detalle.toString() +*/ "]");
+		return sb.toString();
 	}
+
+	
 
 	
 }

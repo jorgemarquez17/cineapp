@@ -81,8 +81,12 @@ public class Horario {
 
 	@Override
 	public String toString() {
-		return "Horario [id=" + id + ", fecha=" + fecha + ", hora=" + hora + ", sala=" + sala + ", precio=" + precio
-				+ ", pelicula=" + pelicula + "]";
+		StringBuilder sb = new StringBuilder();
+		sb.append("Horario [id=" + id + ", fecha=" + fecha + ", hora=" + hora + ", sala=" + sala + ", precio=" + precio);
+		sb.append(", pelicula=" + pelicula.toString() + "]");
+		return sb.toString();
 	}
+
+	
 
 }

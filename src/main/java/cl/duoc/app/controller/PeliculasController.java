@@ -6,6 +6,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,7 +45,7 @@ public class PeliculasController {
 	
 	@GetMapping("/create")
 	public String crear(@ModelAttribute Pelicula pelicula, Model model) {
-		model.addAttribute("generos",servicePelicula.buscarGenero());
+		
 		return "peliculas/formPelicula";
 	}
 	
@@ -58,9 +61,8 @@ public class PeliculasController {
 			String nombreImagen = Utileria.guardarImagen(multiPart, request);
 			pelicula.setImagen(nombreImagen);
 		}		
-		System.out.println("Antes: "+pelicula.getDetalle());
+
 		serviceDetalle.insertar(pelicula.getDetalle());
-		System.out.println("Despues: "+pelicula.getDetalle());
 		
 		servicePelicula.insertar(pelicula);	
 		
@@ -68,6 +70,38 @@ public class PeliculasController {
 		//return "peliculas/formPelicula";
 		return "redirect:/peliculas/index";
 	}	
+	
+	@GetMapping(value="/edit/{id}")
+	public String editar(@PathVariable("id") int idPelicula, Model model) {
+		
+		Pelicula pelicula = servicePelicula.buscarPorId(idPelicula);
+		model.addAttribute("pelicula",pelicula);
+		return "peliculas/formPelicula";
+	}
+	
+	@GetMapping(value="/delete/{id}")
+	public String eliminar(@PathVariable("id") int idPelicula, RedirectAttributes attributes) {
+		
+		Pelicula pelicula = servicePelicula.buscarPorId(idPelicula);
+		// primero elimnar la pelicula
+		servicePelicula.eliminar(idPelicula);
+		//Despues se elimina el detalle
+		serviceDetalle.eliminar(pelicula.getDetalle().getId());
+		attributes.addFlashAttribute("mensaje", "La pelicula fue eliminada");
+		return "redirect:/peliculas/index";
+	}
+	
+	@GetMapping(value="/indexPaginate")
+	public String mostrarIndexPAginado(Model model,Pageable page) {
+		Page<Pelicula> lista = servicePelicula.buscarTodas(page);
+		model.addAttribute("peliculas",lista.getContent());
+		return "peliculas/listPeliculas";
+	}
+	
+	@ModelAttribute("generos")
+	public List<String> getGeneros(){
+		return servicePelicula.buscarGenero();
+	}
 
 	@InitBinder
 	public void initbinder(WebDataBinder binder) {

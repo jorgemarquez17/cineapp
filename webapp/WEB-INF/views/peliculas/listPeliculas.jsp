@@ -13,6 +13,9 @@
     
     <spring:url value="/resources" var="urlPublic"></spring:url>
     <spring:url value="/peliculas/create" var="urlNueva"></spring:url>
+    <spring:url value="/peliculas/edit" var="urlEdit"></spring:url>
+    <spring:url value="/peliculas/delete" var="urlDelete"></spring:url>
+    <spring:url value="/peliculas/indexPaginate" var="urlPeliculas"></spring:url>
     <link href="${urlPublic}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="${urlPublic}/bootstrap/css/theme.css" rel="stylesheet">
     
@@ -46,11 +49,11 @@
 				</tr>
 				<c:forEach items="${peliculas}" var="listPelis">
 					<tr>
-						<td><c:out value="${listPelis.titulo }" /></td>
-						<td><c:out value="${listPelis.genero }" /></td>
-						<td><c:out value="${listPelis.clasificacion }" /></td>
-						<td><c:out value="${listPelis.duracion }" /></td>
-						<td><fmt:formatDate pattern="dd-MM-yyyy" value="${listPelis.fechaEstreno }" /></td>
+						<td><c:out value="${listPelis.titulo}"/></td>
+						<td><c:out value="${listPelis.genero}"/></td>
+						<td><c:out value="${listPelis.clasificacion}" /></td>
+						<td><c:out value="${listPelis.duracion}"/></td>
+						<td><fmt:formatDate pattern="dd-MM-yyyy" value="${listPelis.fechaEstreno}" /></td>
 						<td>
 						  <c:choose >
 						  	<c:when test="${listPelis.estatus eq 'Activa'}">
@@ -62,15 +65,23 @@
 							
 						  </c:choose>
 						</td>
-						<td><a href="#" class="btn btn-success btn-sm" role="button"
+						<td><a href="${urlEdit}/${listPelis.id}" class="btn btn-success btn-sm" role="button"
 							title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
-							<a href="#" class="btn btn-danger btn-sm" role="button"
+							<a href="${urlDelete}/${listPelis.id}" onclick='return confirm("¿Estas Seguro?")' class="btn btn-danger btn-sm" role="button"
 							title="Eliminar"><span class="glyphicon glyphicon-trash"></span></a>
 						</td>
 					</tr>
 				</c:forEach>
 			</table>
-      </div>
+			<nav aria-label="">
+				<ul class="pager">
+					<li><a
+						href="${urlPeliculas}/indexPaginate?page=${listPelis.number - 1 }">Anterior</a></li>
+					<li><a
+						href="${urlPeliculas}/indexPaginate?page=${listPelis.number + 1 }">Siguiente</a></li>
+				</ul>
+			</nav>
+		</div>
           
       <hr class="featurette-divider">
 

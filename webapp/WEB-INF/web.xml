@@ -13,7 +13,7 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 		<multipart-config>
-			<location>/tmp</location>
+			<location>/tmp2</location>
 		</multipart-config>
 	</servlet>
 	<servlet-mapping>

@@ -19,7 +19,6 @@ public class Detalle {
 	private String trailer;
 	
 	public Detalle() {
-		//System.out.println("Constructor Detalle");
 	}
 	public int getId() {
 		return id;
